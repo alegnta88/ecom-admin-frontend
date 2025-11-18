@@ -31,17 +31,13 @@ function Login() {
         throw new Error(data.message || 'Login failed')
       }
 
-      // Store token if your API returns one
       if (data.token) {
         localStorage.setItem('token', data.token)
       }
 
       console.log('Login successful:', data)
       alert('Login successful!')
-      
-      // Redirect or update app state here
-      // Example: window.location.href = '/dashboard'
-      
+
     } catch (err) {
       setError(err.message)
       console.error('Login error:', err)
